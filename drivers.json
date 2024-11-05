@@ -1,0 +1,58 @@
+[
+    {
+        "model": "apiF1.driver",
+        "pk": 1,
+        "fields": {
+            "name": "Lewis Hamilton",
+            "user": 1
+        }
+    },
+    {
+        "model": "apiF1.driver",
+        "pk": 2,
+        "fields": {
+            "name": "Max Verstappen",
+            "user": 1
+        }
+    },
+    {
+        "model": "apiF1.driver",
+        "pk": 3,
+        "fields": {
+            "name": "Charles Leclerc",
+            "user": 2
+        }
+    },
+    {
+        "model": "apiF1.driver",
+        "pk": 4,
+        "fields": {
+            "name": "Fernando Alonso",
+            "user": 2
+        }
+    },
+    {
+        "model": "apiF1.driver",
+        "pk": 5,
+        "fields": {
+            "name": "Sergio Pérez",
+            "user": 1
+        }
+    },
+    {
+        "model": "apiF1.driver",
+        "pk": 6,
+        "fields": {
+            "name": "Lando Norris",
+            "user": 2
+        }
+    },
+    {
+        "model": "apiF1.driver",
+        "pk": 7,
+        "fields": {
+            "name": "George Russell",
+            "user": 3
+        }
+    }
+]
