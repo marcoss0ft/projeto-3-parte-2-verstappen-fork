@@ -146,7 +146,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "https://projeto-2-frontend-verstappen-front.onrender.com",
-    "https://projeto-2-backend-verstappen-front.onrender.com",
+    #"https://projeto-2-frontend-verstappen-front.onrender.com",
+    #"https://projeto-2-backend-verstappen-front.onrender.com",
+    "http://localhost:5173"
 ]
 CORS_ALLOW_CREDENTIALS = True
