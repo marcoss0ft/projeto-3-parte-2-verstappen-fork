@@ -10,4 +10,5 @@ urlpatterns = [
     path('teams/', views.api_teams),
     path('token/', views.api_get_token),
     path('users/', views.api_user),
+    path('news/', views.f1_news),
 ]

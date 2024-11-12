@@ -125,3 +125,49 @@ def api_user(request):
             return Response({'message': 'User created successfully.'}, status=status.HTTP_201_CREATED)
         except IntegrityError:
             return Response({'error': 'User with this username or email already exists.'}, status=status.HTTP_400_BAD_REQUEST)
+        
+
+def extract_links(url):
+    
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, "html.parser")
+
+
+    article_list = soup.find("ul", id="article-list")
+
+
+    #print(response.text)
+
+    link = []
+    data = []
+    if article_list: 
+        articles = article_list
+        print('O Número de notícias é : ' , len(articles))
+        for article in articles:
+            link_tag = article.find("a" , href=True)
+            #print(link_tag)
+            img_tag = link_tag.find("img")
+            img_url = img_tag.get("src")
+            #print(img_url)
+
+            p_tag = link_tag.find("p")
+            title = p_tag.get_text(strip=True)
+            if link_tag:
+                link.append(link_tag["href"])
+                dict = {
+                    "link": link_tag["href"],
+                    "imagem": img_url, 
+                    "titulo": title,
+                }
+                data.append(dict)
+    return data
+
+@api_view(['GET'])
+def f1_news(request):
+    
+    url = "https://www.formula1.com/en/latest/all"
+
+    now_news = extract_links(url)
+
+
+    return Response(now_news)
