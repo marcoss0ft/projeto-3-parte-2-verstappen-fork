@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres
+    container_name: f1club2024-db
+    restart: always
+    environment:
+      POSTGRES_USER: f1club2024user
+      POSTGRES_PASSWORD: f1club2024senha
+      POSTGRES_DB: f1club2024
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: .
+    container_name: f1club2024-web
+    restart: always
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
