@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,10 +27,13 @@ SECRET_KEY = 'django-insecure-8v*&=vd2bh-ndvipldqev7p8l38sfje323hf3i89c$1byx2afm
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = False
+
+
+
 DEBUG = True
 
 #ALLOWED_HOSTS = ['projeto-2-backend-verstappen-front.onrender.com', 'localhost', '127.0.0.1', '0.0.0.0']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -96,11 +101,27 @@ DATABASES = {
     )
 }
 '''
-#local
+
+
+#local SQLite
+''''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+'''
+#local PostgreSQL   
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'f1club2024',
+        'USER': 'f1club2024user',
+        'PASSWORD': 'f1club2024senha',
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
 
