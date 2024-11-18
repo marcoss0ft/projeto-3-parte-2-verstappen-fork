@@ -168,9 +168,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    "https://projeto-3-verstappen-fork.onrender.com",
-    "https://projeto-3-parte-2-verstappen-fork.onrender.com",
-    #"http://localhost:5173"
-]
+CORS_ALLOWED_ORIGINS = ["*"]
+
 CORS_ALLOW_CREDENTIALS = True
