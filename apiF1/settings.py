@@ -60,6 +60,7 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -92,15 +93,14 @@ WSGI_APPLICATION = 'apiF1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-''' deploy
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://f1_club_database_user:mWjoqv3fXAdIYSOmTnvoCGlCxXxsFRHv@dpg-csj5qem8ii6s73cvuleg-a.oregon-postgres.render.com/f1_club_database',
+        default='postgresql://favoritos_f1_club_2024_user:zeSWPV9Ca26puvnppmJcHcSflXPbCjMY@dpg-cst91qogph6c739c2opg-a.oregon-postgres.render.com/favoritos_f1_club_2024',
         conn_max_age=600,
         ssl_require=not DEBUG
     )
 }
-'''
+
 
 
 #local SQLite
@@ -113,7 +113,8 @@ DATABASES = {
 }
 
 '''
-#local PostgreSQL   
+#local PostgreSQL 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -124,7 +125,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
+'''
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -160,6 +161,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
