@@ -32,8 +32,8 @@ SECRET_KEY = 'django-insecure-8v*&=vd2bh-ndvipldqev7p8l38sfje323hf3i89c$1byx2afm
 
 DEBUG = False
 
-#ALLOWED_HOSTS = ['projeto-2-backend-verstappen-front.onrender.com', 'localhost', '127.0.0.1', '0.0.0.0']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['projeto-3-parte-2-verstappen-fork.onrender.com', 'localhost', '127.0.0.1', '0.0.0.0']
+#ALLOWED_HOSTS = ['*']
 
 # Application definition
 
